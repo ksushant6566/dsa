@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class BalancedBrackets {
 
-	public static void main(String [] args) {
+	public static boolean main(String [] args) {
 		Scanner sc = new Scanner(System.in);
 
 		Stack<Character> stack = new Stack<>();
@@ -19,8 +19,7 @@ public class BalancedBrackets {
 				stack.push(ch);
 			}else {
 				if(stack.isEmpty()) {
-					System.out.println("not balanced");
-					return;
+					return false;
 				}
 				if(ch == ')' && stack.peek() == '(') {
 					stack.pop();
@@ -31,11 +30,11 @@ public class BalancedBrackets {
 				}
 				else {
 					System.out.println("not balanced");
-					return;
+					return false;
 				}
 			}
 		}
 		
-		System.out.println(stack.isEmpty() ? "balanced" : "not balanced");
+		return stack.isEmpty();
 	}
 }
