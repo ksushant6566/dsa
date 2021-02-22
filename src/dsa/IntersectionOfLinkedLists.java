@@ -24,7 +24,7 @@ public class IntersectionOfLinkedLists {
 			if(tailA == null) headB = headB.next;
 			else tailA = tailA.next;
 			
-		}
+		}         
 		return null;
 	}
 }
